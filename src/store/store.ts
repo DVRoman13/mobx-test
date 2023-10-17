@@ -33,9 +33,6 @@ export const UserStore = types
       store.setUsers(store.users.filter((el: TUser) => el.id != id));
     },
     async getUser(id: string | undefined) {
-      // const data = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-      // const user = await data.json();
-      // store.setUser(user);
       const users = [...store.users];
       const user: IUsers = users.find(el => el.id == id);
       if (!user) return;
